@@ -186,271 +186,273 @@ namespace H3.Knack.UI
 		/// not be able to load this method if it was changed manually.
 		/// </summary>
 		private void InitializeComponent() {
-			this.components = new System.ComponentModel.Container();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KnackForm));
-			this.mainToolBar = new System.Windows.Forms.ToolBar();
-			this.toolBarFileNew = new System.Windows.Forms.ToolBarButton();
-			this.toolBarFileOpen = new System.Windows.Forms.ToolBarButton();
-			this.toolBarFileSave = new System.Windows.Forms.ToolBarButton();
-			this.imageList = new System.Windows.Forms.ImageList(this.components);
-			this.menuItemFile = new System.Windows.Forms.MenuItem();
-			this.menuItemFileNew = new System.Windows.Forms.MenuItem();
-			this.menuItemFileOpen = new System.Windows.Forms.MenuItem();
-			this.menuItemFileSave = new System.Windows.Forms.MenuItem();
-			this.menuItemFileSaveAs = new System.Windows.Forms.MenuItem();
-			this.menuItem6 = new System.Windows.Forms.MenuItem();
-			this.menuItemFileExit = new System.Windows.Forms.MenuItem();
-			this.PanelTopProperty = new System.Windows.Forms.Panel();
-			this.BlockPropertyLabel = new System.Windows.Forms.Label();
-			this.splitter1 = new System.Windows.Forms.Splitter();
-			this.PanelProperyGridInside = new System.Windows.Forms.Panel();
-			this.BlockPropertyGrid = new System.Windows.Forms.PropertyGrid();
-			this.menuItemHelp = new System.Windows.Forms.MenuItem();
-			this.menuItemAbout = new System.Windows.Forms.MenuItem();
-			this.mainMenu = new System.Windows.Forms.MainMenu(this.components);
-			this.saveKNKFileDialog = new System.Windows.Forms.SaveFileDialog();
-			this.PropertyPanel = new System.Windows.Forms.Panel();
-			this.statusBar = new System.Windows.Forms.StatusBar();
-			this.openKNKFileDialog = new System.Windows.Forms.OpenFileDialog();
-			this.panelTop = new System.Windows.Forms.Panel();
-			this.BlocksPanel = new System.Windows.Forms.Panel();
-			this.PanelTopProperty.SuspendLayout();
-			this.PanelProperyGridInside.SuspendLayout();
-			this.PropertyPanel.SuspendLayout();
-			this.panelTop.SuspendLayout();
-			this.SuspendLayout();
-			// 
-			// mainToolBar
-			// 
-			this.mainToolBar.Appearance = System.Windows.Forms.ToolBarAppearance.Flat;
-			this.mainToolBar.Buttons.AddRange(new System.Windows.Forms.ToolBarButton[] {
-									this.toolBarFileNew,
-									this.toolBarFileOpen,
-									this.toolBarFileSave});
-			this.mainToolBar.DropDownArrows = true;
-			this.mainToolBar.ImageList = this.imageList;
-			this.mainToolBar.Location = new System.Drawing.Point(0, 0);
-			this.mainToolBar.Name = "mainToolBar";
-			this.mainToolBar.ShowToolTips = true;
-			this.mainToolBar.Size = new System.Drawing.Size(616, 30);
-			this.mainToolBar.TabIndex = 0;
-			this.mainToolBar.ButtonClick += new System.Windows.Forms.ToolBarButtonClickEventHandler(this.MainToolBarButtonClick);
-			// 
-			// toolBarFileNew
-			// 
-			this.toolBarFileNew.ImageIndex = 0;
-			this.toolBarFileNew.Name = "toolBarFileNew";
-			this.toolBarFileNew.ToolTipText = "New file";
-			// 
-			// toolBarFileOpen
-			// 
-			this.toolBarFileOpen.ImageIndex = 1;
-			this.toolBarFileOpen.Name = "toolBarFileOpen";
-			this.toolBarFileOpen.ToolTipText = "Open file..";
-			// 
-			// toolBarFileSave
-			// 
-			this.toolBarFileSave.ImageIndex = 2;
-			this.toolBarFileSave.Name = "toolBarFileSave";
-			this.toolBarFileSave.ToolTipText = "Save file...";
-			// 
-			// imageList
-			// 
-			this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
-			this.imageList.TransparentColor = System.Drawing.Color.Transparent;
-			this.imageList.Images.SetKeyName(0, "new.png");
-			this.imageList.Images.SetKeyName(1, "open.png");
-			this.imageList.Images.SetKeyName(2, "save.png");
-			// 
-			// menuItemFile
-			// 
-			this.menuItemFile.Index = 0;
-			this.menuItemFile.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-									this.menuItemFileNew,
-									this.menuItemFileOpen,
-									this.menuItemFileSave,
-									this.menuItemFileSaveAs,
-									this.menuItem6,
-									this.menuItemFileExit});
-			this.menuItemFile.Text = "File";
-			// 
-			// menuItemFileNew
-			// 
-			this.menuItemFileNew.Index = 0;
-			this.menuItemFileNew.Text = "New";
-			this.menuItemFileNew.Click += new System.EventHandler(this.MenuItemFileNewClick);
-			// 
-			// menuItemFileOpen
-			// 
-			this.menuItemFileOpen.Index = 1;
-			this.menuItemFileOpen.Text = "Open...";
-			this.menuItemFileOpen.Click += new System.EventHandler(this.MenuItemFileOpenClick);
-			// 
-			// menuItemFileSave
-			// 
-			this.menuItemFileSave.Index = 2;
-			this.menuItemFileSave.Text = "Save";
-			this.menuItemFileSave.Click += new System.EventHandler(this.MenuItemFileSaveClick);
-			// 
-			// menuItemFileSaveAs
-			// 
-			this.menuItemFileSaveAs.Index = 3;
-			this.menuItemFileSaveAs.Text = "Save As...";
-			this.menuItemFileSaveAs.Click += new System.EventHandler(this.MenuItemFileSaveAsClick);
-			// 
-			// menuItem6
-			// 
-			this.menuItem6.Index = 4;
-			this.menuItem6.Text = "-";
-			// 
-			// menuItemFileExit
-			// 
-			this.menuItemFileExit.Index = 5;
-			this.menuItemFileExit.Text = "Exit";
-			this.menuItemFileExit.Click += new System.EventHandler(this.MenuItemFileExitClick);
-			// 
-			// PanelTopProperty
-			// 
-			this.PanelTopProperty.Controls.Add(this.BlockPropertyLabel);
-			this.PanelTopProperty.Dock = System.Windows.Forms.DockStyle.Top;
-			this.PanelTopProperty.Location = new System.Drawing.Point(0, 0);
-			this.PanelTopProperty.Name = "PanelTopProperty";
-			this.PanelTopProperty.Padding = new System.Windows.Forms.Padding(0, 8, 0, 6);
-			this.PanelTopProperty.Size = new System.Drawing.Size(192, 24);
-			this.PanelTopProperty.TabIndex = 3;
-			// 
-			// BlockPropertyLabel
-			// 
-			this.BlockPropertyLabel.AutoSize = true;
-			this.BlockPropertyLabel.Dock = System.Windows.Forms.DockStyle.Top;
-			this.BlockPropertyLabel.Location = new System.Drawing.Point(0, 8);
-			this.BlockPropertyLabel.Name = "BlockPropertyLabel";
-			this.BlockPropertyLabel.Size = new System.Drawing.Size(160, 13);
-			this.BlockPropertyLabel.TabIndex = 3;
-			this.BlockPropertyLabel.Text = "Selected SoundBlock Properties";
-			// 
-			// splitter1
-			// 
-			this.splitter1.Dock = System.Windows.Forms.DockStyle.Right;
-			this.splitter1.Location = new System.Drawing.Point(420, 26);
-			this.splitter1.Name = "splitter1";
-			this.splitter1.Size = new System.Drawing.Size(4, 443);
-			this.splitter1.TabIndex = 4;
-			this.splitter1.TabStop = false;
-			// 
-			// PanelProperyGridInside
-			// 
-			this.PanelProperyGridInside.Controls.Add(this.BlockPropertyGrid);
-			this.PanelProperyGridInside.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.PanelProperyGridInside.Location = new System.Drawing.Point(0, 24);
-			this.PanelProperyGridInside.Name = "PanelProperyGridInside";
-			this.PanelProperyGridInside.Padding = new System.Windows.Forms.Padding(0, 4, 4, 4);
-			this.PanelProperyGridInside.Size = new System.Drawing.Size(192, 419);
-			this.PanelProperyGridInside.TabIndex = 4;
-			// 
-			// BlockPropertyGrid
-			// 
-			this.BlockPropertyGrid.CommandsBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
-			this.BlockPropertyGrid.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.BlockPropertyGrid.LineColor = System.Drawing.SystemColors.ScrollBar;
-			this.BlockPropertyGrid.Location = new System.Drawing.Point(0, 4);
-			this.BlockPropertyGrid.Name = "BlockPropertyGrid";
-			this.BlockPropertyGrid.Size = new System.Drawing.Size(188, 411);
-			this.BlockPropertyGrid.TabIndex = 2;
-			this.BlockPropertyGrid.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.BlockPropertyGridPropertyValueChanged);
-			// 
-			// menuItemHelp
-			// 
-			this.menuItemHelp.Index = 1;
-			this.menuItemHelp.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-									this.menuItemAbout});
-			this.menuItemHelp.Text = "Help";
-			// 
-			// menuItemAbout
-			// 
-			this.menuItemAbout.Index = 0;
-			this.menuItemAbout.Text = "About Knack...";
-			this.menuItemAbout.Click += new System.EventHandler(this.MenuItemAboutClick);
-			// 
-			// mainMenu
-			// 
-			this.mainMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
-									this.menuItemFile,
-									this.menuItemHelp});
-			// 
-			// saveKNKFileDialog
-			// 
-			this.saveKNKFileDialog.DefaultExt = "knk";
-			this.saveKNKFileDialog.Filter = "Knack files|*.knk|All files|*.*";
-			// 
-			// PropertyPanel
-			// 
-			this.PropertyPanel.AutoScroll = true;
-			this.PropertyPanel.Controls.Add(this.PanelProperyGridInside);
-			this.PropertyPanel.Controls.Add(this.PanelTopProperty);
-			this.PropertyPanel.Dock = System.Windows.Forms.DockStyle.Right;
-			this.PropertyPanel.Location = new System.Drawing.Point(424, 26);
-			this.PropertyPanel.Name = "PropertyPanel";
-			this.PropertyPanel.Size = new System.Drawing.Size(192, 443);
-			this.PropertyPanel.TabIndex = 2;
-			// 
-			// statusBar
-			// 
-			this.statusBar.Location = new System.Drawing.Point(0, 469);
-			this.statusBar.Name = "statusBar";
-			this.statusBar.Size = new System.Drawing.Size(616, 22);
-			this.statusBar.TabIndex = 1;
-			this.statusBar.Text = "Ready.";
-			// 
-			// openKNKFileDialog
-			// 
-			this.openKNKFileDialog.DefaultExt = "knk";
-			this.openKNKFileDialog.Filter = "Knack files|*.knk|All files|*.*";
-			// 
-			// panelTop
-			// 
-			this.panelTop.Controls.Add(this.mainToolBar);
-			this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panelTop.ForeColor = System.Drawing.Color.DarkSlateGray;
-			this.panelTop.Location = new System.Drawing.Point(0, 0);
-			this.panelTop.Name = "panelTop";
-			this.panelTop.Size = new System.Drawing.Size(616, 26);
-			this.panelTop.TabIndex = 0;
-			// 
-			// BlocksPanel
-			// 
-			this.BlocksPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.BlocksPanel.Location = new System.Drawing.Point(0, 26);
-			this.BlocksPanel.Name = "BlocksPanel";
-			this.BlocksPanel.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
-			this.BlocksPanel.Size = new System.Drawing.Size(424, 443);
-			this.BlocksPanel.TabIndex = 3;
-			// 
-			// KnackForm
-			// 
-			this.AllowDrop = true;
-			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-			this.ClientSize = new System.Drawing.Size(616, 491);
-			this.Controls.Add(this.splitter1);
-			this.Controls.Add(this.BlocksPanel);
-			this.Controls.Add(this.PropertyPanel);
-			this.Controls.Add(this.statusBar);
-			this.Controls.Add(this.panelTop);
-			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-			this.Menu = this.mainMenu;
-			this.MinimumSize = new System.Drawing.Size(320, 240);
-			this.Name = "KnackForm";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
-			this.Text = "Knack";
-			this.DragDrop += new System.Windows.Forms.DragEventHandler(this.KnackFormDragDrop);
-			this.DragEnter += new System.Windows.Forms.DragEventHandler(this.KnackFormDragEnter);
-			this.PanelTopProperty.ResumeLayout(false);
-			this.PanelTopProperty.PerformLayout();
-			this.PanelProperyGridInside.ResumeLayout(false);
-			this.PropertyPanel.ResumeLayout(false);
-			this.panelTop.ResumeLayout(false);
-			this.panelTop.PerformLayout();
-			this.ResumeLayout(false);
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(KnackForm));
+            this.mainToolBar = new System.Windows.Forms.ToolBar();
+            this.toolBarFileNew = new System.Windows.Forms.ToolBarButton();
+            this.toolBarFileOpen = new System.Windows.Forms.ToolBarButton();
+            this.toolBarFileSave = new System.Windows.Forms.ToolBarButton();
+            this.imageList = new System.Windows.Forms.ImageList(this.components);
+            this.menuItemFile = new System.Windows.Forms.MenuItem();
+            this.menuItemFileNew = new System.Windows.Forms.MenuItem();
+            this.menuItemFileOpen = new System.Windows.Forms.MenuItem();
+            this.menuItemFileSave = new System.Windows.Forms.MenuItem();
+            this.menuItemFileSaveAs = new System.Windows.Forms.MenuItem();
+            this.menuItem6 = new System.Windows.Forms.MenuItem();
+            this.menuItemFileExit = new System.Windows.Forms.MenuItem();
+            this.PanelTopProperty = new System.Windows.Forms.Panel();
+            this.BlockPropertyLabel = new System.Windows.Forms.Label();
+            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.PanelProperyGridInside = new System.Windows.Forms.Panel();
+            this.BlockPropertyGrid = new System.Windows.Forms.PropertyGrid();
+            this.menuItemHelp = new System.Windows.Forms.MenuItem();
+            this.menuItemAbout = new System.Windows.Forms.MenuItem();
+            this.mainMenu = new System.Windows.Forms.MainMenu(this.components);
+            this.saveKNKFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.PropertyPanel = new System.Windows.Forms.Panel();
+            this.statusBar = new System.Windows.Forms.StatusBar();
+            this.openKNKFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.panelTop = new System.Windows.Forms.Panel();
+            this.BlocksPanel = new System.Windows.Forms.Panel();
+            this.PanelTopProperty.SuspendLayout();
+            this.PanelProperyGridInside.SuspendLayout();
+            this.PropertyPanel.SuspendLayout();
+            this.panelTop.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // mainToolBar
+            // 
+            this.mainToolBar.Appearance = System.Windows.Forms.ToolBarAppearance.Flat;
+            this.mainToolBar.Buttons.AddRange(new System.Windows.Forms.ToolBarButton[] {
+            this.toolBarFileNew,
+            this.toolBarFileOpen,
+            this.toolBarFileSave});
+            this.mainToolBar.DropDownArrows = true;
+            this.mainToolBar.ImageList = this.imageList;
+            this.mainToolBar.Location = new System.Drawing.Point(0, 0);
+            this.mainToolBar.Name = "mainToolBar";
+            this.mainToolBar.ShowToolTips = true;
+            this.mainToolBar.Size = new System.Drawing.Size(691, 28);
+            this.mainToolBar.TabIndex = 0;
+            this.mainToolBar.ButtonClick += new System.Windows.Forms.ToolBarButtonClickEventHandler(this.MainToolBarButtonClick);
+            // 
+            // toolBarFileNew
+            // 
+            this.toolBarFileNew.ImageIndex = 0;
+            this.toolBarFileNew.Name = "toolBarFileNew";
+            this.toolBarFileNew.ToolTipText = "New file";
+            // 
+            // toolBarFileOpen
+            // 
+            this.toolBarFileOpen.ImageIndex = 1;
+            this.toolBarFileOpen.Name = "toolBarFileOpen";
+            this.toolBarFileOpen.ToolTipText = "Open file..";
+            // 
+            // toolBarFileSave
+            // 
+            this.toolBarFileSave.ImageIndex = 2;
+            this.toolBarFileSave.Name = "toolBarFileSave";
+            this.toolBarFileSave.ToolTipText = "Save file...";
+            // 
+            // imageList
+            // 
+            this.imageList.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList.ImageStream")));
+            this.imageList.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList.Images.SetKeyName(0, "new.png");
+            this.imageList.Images.SetKeyName(1, "open.png");
+            this.imageList.Images.SetKeyName(2, "save.png");
+            // 
+            // menuItemFile
+            // 
+            this.menuItemFile.Index = 0;
+            this.menuItemFile.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItemFileNew,
+            this.menuItemFileOpen,
+            this.menuItemFileSave,
+            this.menuItemFileSaveAs,
+            this.menuItem6,
+            this.menuItemFileExit});
+            this.menuItemFile.Text = "File";
+            // 
+            // menuItemFileNew
+            // 
+            this.menuItemFileNew.Index = 0;
+            this.menuItemFileNew.Text = "New";
+            this.menuItemFileNew.Click += new System.EventHandler(this.MenuItemFileNewClick);
+            // 
+            // menuItemFileOpen
+            // 
+            this.menuItemFileOpen.Index = 1;
+            this.menuItemFileOpen.Text = "Open...";
+            this.menuItemFileOpen.Click += new System.EventHandler(this.MenuItemFileOpenClick);
+            // 
+            // menuItemFileSave
+            // 
+            this.menuItemFileSave.Index = 2;
+            this.menuItemFileSave.Text = "Save";
+            this.menuItemFileSave.Click += new System.EventHandler(this.MenuItemFileSaveClick);
+            // 
+            // menuItemFileSaveAs
+            // 
+            this.menuItemFileSaveAs.Index = 3;
+            this.menuItemFileSaveAs.Text = "Save As...";
+            this.menuItemFileSaveAs.Click += new System.EventHandler(this.MenuItemFileSaveAsClick);
+            // 
+            // menuItem6
+            // 
+            this.menuItem6.Index = 4;
+            this.menuItem6.Text = "-";
+            // 
+            // menuItemFileExit
+            // 
+            this.menuItemFileExit.Index = 5;
+            this.menuItemFileExit.Text = "Exit";
+            this.menuItemFileExit.Click += new System.EventHandler(this.MenuItemFileExitClick);
+            // 
+            // PanelTopProperty
+            // 
+            this.PanelTopProperty.Controls.Add(this.BlockPropertyLabel);
+            this.PanelTopProperty.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelTopProperty.Location = new System.Drawing.Point(0, 0);
+            this.PanelTopProperty.Name = "PanelTopProperty";
+            this.PanelTopProperty.Padding = new System.Windows.Forms.Padding(0, 8, 0, 6);
+            this.PanelTopProperty.Size = new System.Drawing.Size(308, 35);
+            this.PanelTopProperty.TabIndex = 3;
+            // 
+            // BlockPropertyLabel
+            // 
+            this.BlockPropertyLabel.AutoSize = true;
+            this.BlockPropertyLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.BlockPropertyLabel.Location = new System.Drawing.Point(0, 8);
+            this.BlockPropertyLabel.Name = "BlockPropertyLabel";
+            this.BlockPropertyLabel.Size = new System.Drawing.Size(238, 20);
+            this.BlockPropertyLabel.TabIndex = 3;
+            this.BlockPropertyLabel.Text = "Selected SoundBlock Properties";
+            // 
+            // splitter1
+            // 
+            this.splitter1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.splitter1.Location = new System.Drawing.Point(377, 38);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(6, 297);
+            this.splitter1.TabIndex = 4;
+            this.splitter1.TabStop = false;
+            // 
+            // PanelProperyGridInside
+            // 
+            this.PanelProperyGridInside.Controls.Add(this.BlockPropertyGrid);
+            this.PanelProperyGridInside.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PanelProperyGridInside.Location = new System.Drawing.Point(0, 35);
+            this.PanelProperyGridInside.Name = "PanelProperyGridInside";
+            this.PanelProperyGridInside.Padding = new System.Windows.Forms.Padding(0, 4, 4, 4);
+            this.PanelProperyGridInside.Size = new System.Drawing.Size(308, 262);
+            this.PanelProperyGridInside.TabIndex = 4;
+            // 
+            // BlockPropertyGrid
+            // 
+            this.BlockPropertyGrid.CommandsBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(237)))), ((int)(((byte)(237)))));
+            this.BlockPropertyGrid.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BlockPropertyGrid.LineColor = System.Drawing.SystemColors.ScrollBar;
+            this.BlockPropertyGrid.Location = new System.Drawing.Point(0, 4);
+            this.BlockPropertyGrid.Name = "BlockPropertyGrid";
+            this.BlockPropertyGrid.Size = new System.Drawing.Size(304, 254);
+            this.BlockPropertyGrid.TabIndex = 2;
+            this.BlockPropertyGrid.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.BlockPropertyGridPropertyValueChanged);
+            // 
+            // menuItemHelp
+            // 
+            this.menuItemHelp.Index = 1;
+            this.menuItemHelp.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItemAbout});
+            this.menuItemHelp.Text = "Help";
+            // 
+            // menuItemAbout
+            // 
+            this.menuItemAbout.Index = 0;
+            this.menuItemAbout.Text = "About Knack...";
+            this.menuItemAbout.Click += new System.EventHandler(this.MenuItemAboutClick);
+            // 
+            // mainMenu
+            // 
+            this.mainMenu.MenuItems.AddRange(new System.Windows.Forms.MenuItem[] {
+            this.menuItemFile,
+            this.menuItemHelp});
+            // 
+            // saveKNKFileDialog
+            // 
+            this.saveKNKFileDialog.DefaultExt = "knk";
+            this.saveKNKFileDialog.Filter = "Knack files|*.knk|All files|*.*";
+            // 
+            // PropertyPanel
+            // 
+            this.PropertyPanel.AutoScroll = true;
+            this.PropertyPanel.Controls.Add(this.PanelProperyGridInside);
+            this.PropertyPanel.Controls.Add(this.PanelTopProperty);
+            this.PropertyPanel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.PropertyPanel.Location = new System.Drawing.Point(383, 38);
+            this.PropertyPanel.Name = "PropertyPanel";
+            this.PropertyPanel.Size = new System.Drawing.Size(308, 297);
+            this.PropertyPanel.TabIndex = 2;
+            // 
+            // statusBar
+            // 
+            this.statusBar.Location = new System.Drawing.Point(0, 335);
+            this.statusBar.Name = "statusBar";
+            this.statusBar.Size = new System.Drawing.Size(691, 33);
+            this.statusBar.TabIndex = 1;
+            this.statusBar.Text = "Ready.";
+            // 
+            // openKNKFileDialog
+            // 
+            this.openKNKFileDialog.DefaultExt = "knk";
+            this.openKNKFileDialog.Filter = "Knack files|*.knk|All files|*.*";
+            // 
+            // panelTop
+            // 
+            this.panelTop.Controls.Add(this.mainToolBar);
+            this.panelTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTop.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.panelTop.Location = new System.Drawing.Point(0, 0);
+            this.panelTop.Name = "panelTop";
+            this.panelTop.Size = new System.Drawing.Size(691, 38);
+            this.panelTop.TabIndex = 0;
+            // 
+            // BlocksPanel
+            // 
+            this.BlocksPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BlocksPanel.Location = new System.Drawing.Point(0, 38);
+            this.BlocksPanel.Name = "BlocksPanel";
+            this.BlocksPanel.Padding = new System.Windows.Forms.Padding(0, 0, 4, 0);
+            this.BlocksPanel.Size = new System.Drawing.Size(383, 297);
+            this.BlocksPanel.TabIndex = 3;
+            // 
+            // KnackForm
+            // 
+            this.AllowDrop = true;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(691, 368);
+            this.Controls.Add(this.splitter1);
+            this.Controls.Add(this.BlocksPanel);
+            this.Controls.Add(this.PropertyPanel);
+            this.Controls.Add(this.statusBar);
+            this.Controls.Add(this.panelTop);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Menu = this.mainMenu;
+            this.MinimumSize = new System.Drawing.Size(512, 351);
+            this.Name = "KnackForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
+            this.Text = "Knack";
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.KnackFormDragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.KnackFormDragEnter);
+            this.PanelTopProperty.ResumeLayout(false);
+            this.PanelTopProperty.PerformLayout();
+            this.PanelProperyGridInside.ResumeLayout(false);
+            this.PropertyPanel.ResumeLayout(false);
+            this.panelTop.ResumeLayout(false);
+            this.panelTop.PerformLayout();
+            this.ResumeLayout(false);
+
 		}
 		#endregion
 		
