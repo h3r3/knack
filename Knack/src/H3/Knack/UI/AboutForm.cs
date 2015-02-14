@@ -52,115 +52,119 @@ namespace H3.Knack.UI
 		/// not be able to load this method if it was changed manually.
 		/// </summary>
 		private void InitializeComponent() {
-			this.labelStage = new System.Windows.Forms.Label();
-			this.buttonOk = new System.Windows.Forms.Button();
-			this.linkLabel = new System.Windows.Forms.LinkLabel();
-			this.panel1 = new System.Windows.Forms.Panel();
-			this.labelKnack = new System.Windows.Forms.Label();
-			this.labelLicense = new System.Windows.Forms.Label();
-			this.labelVersion = new System.Windows.Forms.Label();
-			this.labelAuthor = new System.Windows.Forms.Label();
-			this.panel1.SuspendLayout();
-			this.SuspendLayout();
-			// 
-			// labelStage
-			// 
-			this.labelStage.AutoSize = true;
-			this.labelStage.Location = new System.Drawing.Point(128, 16);
-			this.labelStage.Name = "labelStage";
-			this.labelStage.Size = new System.Drawing.Size(70, 13);
-			this.labelStage.TabIndex = 2;
-			this.labelStage.Text = "alpha version";
-			// 
-			// buttonOk
-			// 
-			this.buttonOk.FlatStyle = System.Windows.Forms.FlatStyle.System;
-			this.buttonOk.Location = new System.Drawing.Point(160, 8);
-			this.buttonOk.Name = "buttonOk";
-			this.buttonOk.Size = new System.Drawing.Size(75, 23);
-			this.buttonOk.TabIndex = 1;
-			this.buttonOk.Text = "OK";
-			this.buttonOk.Click += new System.EventHandler(this.ButtonOkClick);
-			// 
-			// linkLabel
-			// 
-			this.linkLabel.AutoSize = true;
-			this.linkLabel.Location = new System.Drawing.Point(24, 127);
-			this.linkLabel.Name = "linkLabel";
-			this.linkLabel.Size = new System.Drawing.Size(123, 13);
-			this.linkLabel.TabIndex = 6;
-			this.linkLabel.TabStop = true;
-			this.linkLabel.Text = "Go to Knack HomePage";
-			this.linkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabelLinkClicked);
-			// 
-			// panel1
-			// 
-			this.panel1.Controls.Add(this.buttonOk);
-			this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-			this.panel1.Location = new System.Drawing.Point(0, 152);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(250, 40);
-			this.panel1.TabIndex = 5;
-			// 
-			// labelKnack
-			// 
-			this.labelKnack.AutoSize = true;
-			this.labelKnack.Font = new System.Drawing.Font("Tahoma", 26F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
-			this.labelKnack.Location = new System.Drawing.Point(16, 16);
-			this.labelKnack.Name = "labelKnack";
-			this.labelKnack.Size = new System.Drawing.Size(95, 31);
-			this.labelKnack.TabIndex = 1;
-			this.labelKnack.Text = "Knack";
-			// 
-			// labelLicense
-			// 
-			this.labelLicense.AutoSize = true;
-			this.labelLicense.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelLicense.Location = new System.Drawing.Point(128, 48);
-			this.labelLicense.Name = "labelLicense";
-			this.labelLicense.Size = new System.Drawing.Size(102, 12);
-			this.labelLicense.TabIndex = 8;
-			this.labelLicense.Text = "Free Software - GPL v3";
-			// 
-			// labelVersion
-			// 
-			this.labelVersion.AutoSize = true;
-			this.labelVersion.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
-			this.labelVersion.Location = new System.Drawing.Point(128, 32);
-			this.labelVersion.Name = "labelVersion";
-			this.labelVersion.Size = new System.Drawing.Size(103, 13);
-			this.labelVersion.TabIndex = 3;
-			this.labelVersion.Text = "v.0.0.0000.00000";
-			// 
-			// labelAuthor
-			// 
-			this.labelAuthor.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelAuthor.Location = new System.Drawing.Point(24, 80);
-			this.labelAuthor.Name = "labelAuthor";
-			this.labelAuthor.Size = new System.Drawing.Size(159, 37);
-			this.labelAuthor.TabIndex = 4;
-			this.labelAuthor.Text = "Copyright 2004, 2005, 2006, 2007, 2008 Riccardo Gerosa";
-			// 
-			// AboutForm
-			// 
-			this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
-			this.ClientSize = new System.Drawing.Size(250, 192);
-			this.Controls.Add(this.labelLicense);
-			this.Controls.Add(this.linkLabel);
-			this.Controls.Add(this.panel1);
-			this.Controls.Add(this.labelAuthor);
-			this.Controls.Add(this.labelVersion);
-			this.Controls.Add(this.labelStage);
-			this.Controls.Add(this.labelKnack);
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-			this.Name = "AboutForm";
-			this.ShowInTaskbar = false;
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "About Knack";
-			this.Load += new System.EventHandler(this.AboutFormLoad);
-			this.panel1.ResumeLayout(false);
-			this.ResumeLayout(false);
-			this.PerformLayout();
+            this.labelStage = new System.Windows.Forms.Label();
+            this.buttonOk = new System.Windows.Forms.Button();
+            this.linkLabel = new System.Windows.Forms.LinkLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.labelKnack = new System.Windows.Forms.Label();
+            this.labelLicense = new System.Windows.Forms.Label();
+            this.labelVersion = new System.Windows.Forms.Label();
+            this.labelAuthor = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // labelStage
+            // 
+            this.labelStage.AutoSize = true;
+            this.labelStage.Font = new System.Drawing.Font("Microsoft Sans Serif", 2.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Millimeter, ((byte)(0)));
+            this.labelStage.Location = new System.Drawing.Point(205, 23);
+            this.labelStage.Name = "labelStage";
+            this.labelStage.Size = new System.Drawing.Size(108, 20);
+            this.labelStage.TabIndex = 2;
+            this.labelStage.Text = "alpha version";
+            // 
+            // buttonOk
+            // 
+            this.buttonOk.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.buttonOk.Location = new System.Drawing.Point(256, 12);
+            this.buttonOk.Name = "buttonOk";
+            this.buttonOk.Size = new System.Drawing.Size(120, 33);
+            this.buttonOk.TabIndex = 1;
+            this.buttonOk.Text = "OK";
+            this.buttonOk.Click += new System.EventHandler(this.ButtonOkClick);
+            // 
+            // linkLabel
+            // 
+            this.linkLabel.AutoSize = true;
+            this.linkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 2.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Millimeter, ((byte)(0)));
+            this.linkLabel.Location = new System.Drawing.Point(38, 163);
+            this.linkLabel.Name = "linkLabel";
+            this.linkLabel.Size = new System.Drawing.Size(189, 20);
+            this.linkLabel.TabIndex = 6;
+            this.linkLabel.TabStop = true;
+            this.linkLabel.Text = "Go to Knack HomePage";
+            this.linkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabelLinkClicked);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.buttonOk);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, 213);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(428, 59);
+            this.panel1.TabIndex = 5;
+            // 
+            // labelKnack
+            // 
+            this.labelKnack.AutoSize = true;
+            this.labelKnack.Font = new System.Drawing.Font("Tahoma", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Millimeter);
+            this.labelKnack.Location = new System.Drawing.Point(26, 23);
+            this.labelKnack.Name = "labelKnack";
+            this.labelKnack.Size = new System.Drawing.Size(165, 56);
+            this.labelKnack.TabIndex = 1;
+            this.labelKnack.Text = "Knack";
+            // 
+            // labelLicense
+            // 
+            this.labelLicense.AutoSize = true;
+            this.labelLicense.Font = new System.Drawing.Font("Microsoft Sans Serif", 2.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Millimeter, ((byte)(0)));
+            this.labelLicense.Location = new System.Drawing.Point(205, 78);
+            this.labelLicense.Name = "labelLicense";
+            this.labelLicense.Size = new System.Drawing.Size(186, 20);
+            this.labelLicense.TabIndex = 8;
+            this.labelLicense.Text = "Free Software - GPL v3";
+            // 
+            // labelVersion
+            // 
+            this.labelVersion.AutoSize = true;
+            this.labelVersion.Font = new System.Drawing.Font("Tahoma", 2.9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Millimeter);
+            this.labelVersion.Location = new System.Drawing.Point(205, 52);
+            this.labelVersion.Name = "labelVersion";
+            this.labelVersion.Size = new System.Drawing.Size(161, 21);
+            this.labelVersion.TabIndex = 3;
+            this.labelVersion.Text = "v.0.0.0000.00000";
+            // 
+            // labelAuthor
+            // 
+            this.labelAuthor.Font = new System.Drawing.Font("Microsoft Sans Serif", 2.9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Millimeter, ((byte)(0)));
+            this.labelAuthor.Location = new System.Drawing.Point(38, 117);
+            this.labelAuthor.Name = "labelAuthor";
+            this.labelAuthor.Size = new System.Drawing.Size(353, 31);
+            this.labelAuthor.TabIndex = 4;
+            this.labelAuthor.Text = "Copyright 2004 - 2015 Riccardo Gerosa";
+            // 
+            // AboutForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(428, 272);
+            this.Controls.Add(this.labelLicense);
+            this.Controls.Add(this.linkLabel);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.labelAuthor);
+            this.Controls.Add(this.labelVersion);
+            this.Controls.Add(this.labelStage);
+            this.Controls.Add(this.labelKnack);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Name = "AboutForm";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "About Knack";
+            this.Load += new System.EventHandler(this.AboutFormLoad);
+            this.panel1.ResumeLayout(false);
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
 		}
 		#endregion
 		void ButtonOkClick(object sender, System.EventArgs e)
