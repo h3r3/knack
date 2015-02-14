@@ -123,7 +123,7 @@ namespace H3.Knack.UI
 			MenuItem menuItemNewMidiIn = new MenuItemNewSoundBlock("Midi In",newSBHandler,typeof(H3.Sound.Midi.MidiRender.MidiInRender));
 			MenuItem menuItemNewMidiEditor = new MenuItemNewSoundBlock("Midi Editor",newSBHandler,typeof(H3.Sound.Midi.MidiRender.MidiEditorRender));
 			MenuItem menuItemNewMidiRandom = new MenuItemNewSoundBlock("Midi Random",newSBHandler,typeof(H3.Sound.Midi.MidiRender.RandomMidiRender));
-			MenuItem menuItemNewSoundOut = new MenuItemNewSoundBlock("Sound Out",newSBHandler,typeof(H3.Sound.Wave.SoundRender.SoundOutRender));
+			//MenuItem menuItemNewSoundOut = new MenuItemNewSoundBlock("Sound Out",newSBHandler,typeof(H3.Sound.Wave.SoundRender.SoundOutRender));
 			MenuItem menuItemNewWaveSine = new MenuItemNewSoundBlock("Sine",newSBHandler,typeof(H3.Sound.Wave.SoundRender.SineSoundRender));
 			MenuItem menuItemNewWaveSquare = new MenuItemNewSoundBlock("Square",newSBHandler,typeof(H3.Sound.Wave.SoundRender.SquareSoundRender));
 			MenuItem menuItemNewWaveSawtooth = new MenuItemNewSoundBlock("Sawtooth",newSBHandler,typeof(H3.Sound.Wave.SoundRender.SawtoothSoundRender));
@@ -146,8 +146,8 @@ namespace H3.Knack.UI
 						menuItemNewMidiEditor,
 						menuItemNewMidiRandom});
 			
-			menuItemNewOutput.MenuItems.AddRange(new MenuItem[] {
-						menuItemNewSoundOut});
+			//menuItemNewOutput.MenuItems.AddRange(new MenuItem[] {
+			//			menuItemNewSoundOut});
 			
 			menuItemNewWave.MenuItems.AddRange(new MenuItem[] {
 						menuItemNewWaveSine,
@@ -481,7 +481,7 @@ namespace H3.Knack.UI
 		void NewSoundItem(SoundBlock sb, System.Drawing.Point location) {
 			int numSoundOutputs = (sb is ISoundRender) ? 1 : 0;
 			int numMidiOutputs = (sb is IMidiRender) ? 1 : 0;
-			if (sb is SoundOutRender) numSoundOutputs = 0;
+			//if (sb is SoundOutRender) numSoundOutputs = 0;
 			SoundItem sItem = new SoundItem(sItemTree,sb,sb.SoundInputs.Length,numSoundOutputs,sb.MidiInputs.Length,numMidiOutputs);
 			sItem.Location = location;
 			sItemTree.AddSoundItem(sItem);

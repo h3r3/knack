@@ -1,4 +1,5 @@
-﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" xmlns:Conversion="urn:Conversion" ToolsVersion="3.5">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" xmlns:Conversion="urn:Conversion" ToolsVersion="12.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -16,8 +17,14 @@
     <StartupObject>H3.Knack.MainClass</StartupObject>
     <ApplicationIcon>Images\postronic.ico</ApplicationIcon>
     <RunCodeAnalysis>False</RunCodeAnalysis>
-    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <SourceAnalysisOverrideSettingsFile>C:\Users\Riccardo\AppData\Roaming\ICSharpCode/SharpDevelop3.0\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -28,6 +35,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <DebugType>Full</DebugType>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>false</DebugSymbols>
@@ -38,6 +46,7 @@
     <OutputPath>bin\Release\</OutputPath>
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <DebugType>None</DebugType>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
     <RegisterForComInterop>False</RegisterForComInterop>
@@ -66,32 +75,40 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
-    <Reference Include="Microsoft.DirectX.DirectSound, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\H3\Knack\Main.cs" />
     <Compile Include="src\AssemblyInfo.cs" />
     <Compile Include="src\H3\Sound\Midi\MidiMessage.cs" />
-    <Compile Include="src\H3\Sound\Wave\SoundOut.cs" />
-    <Compile Include="src\H3\Knack\UI\KnackForm.cs" />
+    <Compile Include="src\H3\Knack\UI\KnackForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="src\H3\Sound\SoundBlock.cs" />
     <Compile Include="src\H3\Sound\KnackFile.cs" />
-    <Compile Include="src\H3\Knack\UI\AboutForm.cs" />
+    <Compile Include="src\H3\Knack\UI\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="src\H3\Utils\Settings.cs" />
-    <Compile Include="src\H3\Knack\UI\SoundItemTree.cs" />
-    <Compile Include="src\H3\Knack\UI\SoundItem.cs" />
-    <Compile Include="src\H3\Knack\UI\SoundItemLink.cs" />
+    <Compile Include="src\H3\Knack\UI\SoundItemTree.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\H3\Knack\UI\SoundItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="src\H3\Knack\UI\SoundItemLink.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="src\H3\Knack\UI\KnackGraphics.cs" />
     <Compile Include="src\H3\Sound\Midi\MidiFile.cs" />
     <Compile Include="test\Sound\TestSound.cs" />
     <Compile Include="src\H3\Sound\Midi\MidiUtils.cs" />
     <Compile Include="src\H3\Utils\Logger.cs" />
-    <Compile Include="src\H3\Sound\Wave\SoundRender\TabletSoundRender.cs" />
+    <Compile Include="src\H3\Sound\Wave\SoundRender\TabletSoundRender.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="src\H3\Sound\Wave\SoundRender\ISoundRender.cs" />
     <Compile Include="src\H3\Sound\Wave\SoundRender\SoundRender.cs" />
     <Compile Include="src\H3\Sound\Wave\SoundRender\NullSoundRender.cs" />
-    <Compile Include="src\H3\Sound\Wave\SoundRender\SoundOutRender.cs" />
     <Compile Include="src\H3\Sound\Wave\SoundRender\WaveSoundRender.cs" />
     <Compile Include="src\H3\Sound\Wave\SoundRender\AdsrSoundRender.cs" />
     <Compile Include="src\H3\Sound\Wave\SoundRender\SineSoundRender.cs" />
@@ -108,7 +125,9 @@
     <Compile Include="src\H3\Sound\Midi\MidiRender\MidiInRender.cs" />
     <Compile Include="src\H3\Sound\Midi\MidiRender\RandomMidiRender.cs" />
     <Compile Include="src\H3\Sound\Midi\MidiRender\MidiFilterRender.cs" />
-    <Compile Include="src\H3\Sound\Midi\MidiRender\MidiEditorRender.cs" />
+    <Compile Include="src\H3\Sound\Midi\MidiRender\MidiEditorRender.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="src\H3\Sound\Midi\MidiRender\IMidiRender.cs" />
     <Compile Include="src\H3\Sound\Midi\MidiRender\NullMidiRender.cs" />
     <Compile Include="src\H3\Sound\Midi\MidiRender\MidiRender.cs" />
@@ -122,21 +141,10 @@
     <EmbeddedResource Include="src\H3\Knack\UI\KnackForm.resx">
       <DependentUpon>KnackForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="app.config" />
     <None Include="Knack.snk" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="test\" />
-    <Folder Include="test\Sound\" />
-    <Folder Include="src\" />
-    <Folder Include="src\H3\" />
-    <Folder Include="src\H3\Sound\" />
-    <Folder Include="src\H3\Sound\Midi\" />
-    <Folder Include="src\H3\Knack\" />
-    <Folder Include="src\H3\Knack\UI\" />
-    <Folder Include="src\H3\Sound\Wave\" />
-    <Folder Include="src\H3\Utils\" />
-    <Folder Include="src\H3\Sound\Midi\MidiRender\" />
-    <Folder Include="src\H3\Sound\Wave\SoundRender\" />
     <ProjectReference Include="..\WinTablet\WinTablet\WinTablet.csproj">
       <Project>{C17D52C8-B8CB-44F6-9882-1EA712AD054F}</Project>
       <Name>WinTablet</Name>
