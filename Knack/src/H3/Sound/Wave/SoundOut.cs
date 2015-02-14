@@ -35,8 +35,8 @@ namespace H3.Sound.Wave
 	/// </summary>
 	public class SoundOut : WaveProvider32, IDisposable
 	{
-		int samplesPerSecond = 44100;
-		int channels = 2;
+		const int samplesPerSecond = 44100;
+		const int channels = 2;
 		int bitsPerSample = 16;
 		int bufferBlockBytes = 3200;
 		int bufferBytes = 3200 * 8;  // This must be a multiple of bufferBlockBytes !
@@ -45,22 +45,20 @@ namespace H3.Sound.Wave
 		FileStream fs;
 	    BinaryWriter w;
 		bool outputToFile = false;
-		//int completedPos = 0;
-		short[] blockData;
 		float[] floatLeftChannel;
 		float[] floatRightChannel;
 		bool disposed = false;
 		
 		public enum StreamingType { Thread, Timer }
 		
-		public SoundOut()
+		public SoundOut() : base(samplesPerSecond, channels)
 		{
-			samplesPerSecond = Settings.Instance.GetInt(
-				"/Settings/Output/Sound/General/SamplesPerSecond");
+			//samplesPerSecond = Settings.Instance.GetInt(
+			//	"/Settings/Output/Sound/General/SamplesPerSecond");
 			bitsPerSample = Settings.Instance.GetInt(
 				"/Settings/Output/Sound/General/BitsPerSample");
-			channels = Settings.Instance.GetInt(
-				"/Settings/Output/Sound/General/Channels");
+			//channels = Settings.Instance.GetInt(
+			//	"/Settings/Output/Sound/General/Channels");
 			bufferBlockBytes = Utils.Settings.Instance.GetInt(
 			    "/Settings/Output/Sound/DirectSound/BufferSamples")
 				*(bitsPerSample/8)*channels;
@@ -72,11 +70,9 @@ namespace H3.Sound.Wave
 
             waveOut = new WaveOut();
             waveOut.Init(this);
-            waveOut.Play();
 			
-			blockData = new short[bufferBlockBytes];
-			floatLeftChannel = new float[bufferBlockBytes/2];
-			floatRightChannel = new float[bufferBlockBytes/2];
+			//floatLeftChannel = new float[bufferBlockBytes/2];
+			//floatRightChannel = new float[bufferBlockBytes/2];
 			/*
 			soundWaveFormat.SamplesPerSecond = samplesPerSecond;
 			soundWaveFormat.Channels = (short) channels;
@@ -93,21 +89,6 @@ namespace H3.Sound.Wave
 			soundBufferDescription.ControlVolume = true;  
 			soundBufferDescription.Format = soundWaveFormat;
 			*/
-			//soundBuffer = new SecondaryBuffer(soundBufferDescription,soundDevice);
-			//bufferBytes = soundBuffer.Caps.BufferBytes;
-			/*
-			if (streamingType == StreamingType.Timer) {
-				soundTimer = new System.Timers.Timer(sleepTime);
-				soundTimer.Enabled = false;
-				soundTimer.Elapsed += new System.Timers.ElapsedEventHandler(SoundTimerElapsed);
-			}
-			
-			blockData.Initialize();
-			for (int i = 0; i<bufferBytes/bufferBlockBytes; i++)  {
-				//soundBuffer.Write(blockData.Length*i, blockData, LockFlag.EntireBuffer);  
-			}
-             * */
-			
 		}
 		
 		~SoundOut()
@@ -163,52 +144,32 @@ namespace H3.Sound.Wave
 		/// <summary>
 		/// Override this method to output a sound
 		/// </summary>
-		public virtual void Render(float[] leftChannel,float[] rightChannel)
+		public virtual void Render(float[] leftChannel, float[] rightChannel)
 		{ }
-		
-		private void Render(short[] interleavedChannel) 
-        {
-			int channelSize = interleavedChannel.Length/2;
-				
-			float wave;
-			
-			for (int i=0; i<channelSize; i++) {
-				floatLeftChannel[i] = 0.0f;
-			}
-			for (int i=0; i<channelSize; i++) {
-				floatRightChannel[i] = 0.0f;
-			}
-				
-			this.Render(floatLeftChannel,floatRightChannel);
-			
-			for (int i=0; i<channelSize; i++) {
-				wave = floatLeftChannel[i];
-				if (wave>1.0f) wave = 1.0f; else if (wave<-1.0f) wave = -1.0f;
-				interleavedChannel[i*2] = (short) Math.Round(wave * 32767.0f);
-				wave = floatRightChannel[i];
-				if (wave>1.0f) wave = 1.0f; else if (wave<-1.0f) wave = -1.0f;
-				interleavedChannel[i*2+1] = (short) Math.Round(wave * 32767.0f);
-			}
-			if (outputToFile) {
-				if (w!=null)
-				for (int i=0; i<interleavedChannel.Length; i++) {
-					w.Write(interleavedChannel[i]);
-				}
-			}
-		}
-
-        int sample;
-        float Frequency = 1000;
-        float Amplitude = 0.25f;
 
         public override int Read(float[] buffer, int offset, int sampleCount)
         {
-            int sampleRate = WaveFormat.SampleRate;
-            for (int n = 0; n < sampleCount; n++)
+            int channelSampleCount = sampleCount / 2;
+            if (floatLeftChannel == null || floatRightChannel == null
+                || channelSampleCount != floatLeftChannel.Length || channelSampleCount != floatRightChannel.Length)
             {
-                buffer[n + offset] = (float)(Amplitude * Math.Sin((2 * Math.PI * sample * Frequency) / sampleRate));
-                sample++;
-                if (sample >= sampleRate) sample = 0;
+                floatLeftChannel = new float[channelSampleCount];
+                floatRightChannel = new float[channelSampleCount];
+            }
+            Render(floatLeftChannel, floatRightChannel);
+            int pos = offset;
+            for (int i = 0; i < channelSampleCount; i++)
+            {
+                buffer[pos++] = floatLeftChannel[i];
+                buffer[pos++] = floatRightChannel[i];
+            }
+            if (outputToFile)
+            {
+                if (w != null)
+                    for (int i = 0; i < sampleCount; i++)
+                    {
+                        w.Write(buffer[offset + i]);
+                    }
             }
             return sampleCount;
         }
