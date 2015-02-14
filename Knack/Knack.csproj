@@ -86,6 +86,9 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NAudio">
+      <HintPath>packages\NAudio.1.7.2\lib\net35\NAudio.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>lib\nunit.framework.dll</HintPath>
     </Reference>
@@ -109,6 +112,8 @@
     <Compile Include="src\H3\Knack\UI\AboutForm.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="src\H3\Sound\Wave\SoundOut.cs" />
+    <Compile Include="src\H3\Sound\Wave\SoundRender\SoundOutRender.cs" />
     <Compile Include="src\H3\Utils\Settings.cs" />
     <Compile Include="src\H3\Knack\UI\SoundItemTree.cs">
       <SubType>UserControl</SubType>
@@ -165,6 +170,7 @@
     <None Include="app.config" />
     <None Include="app.manifest" />
     <None Include="Knack.snk" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WinTablet\WinTablet\WinTablet.csproj">
