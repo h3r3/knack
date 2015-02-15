@@ -32,7 +32,7 @@
     <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
     <DebugType>Full</DebugType>
     <Prefer32Bit>false</Prefer32Bit>
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>false</DebugSymbols>
@@ -54,6 +54,10 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DLL|AnyCPU'">
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Ink" />
     <Reference Include="System" />
@@ -63,19 +67,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\TestForm.cs" />
+    <Compile Include="src\TestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="src\AssemblyInfo.cs" />
     <Compile Include="src\WinTablet\TabletAsyncPlugin.cs" />
-    <Compile Include="src\WinTablet\TabletForm.cs" />
-    <Compile Include="src\TestPacketQueueForm.cs" />
+    <Compile Include="src\WinTablet\TabletForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="src\TestPacketQueueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="src\Main.cs" />
-    <Compile Include="src\WinTablet\PacketQueueTabletForm.cs" />
+    <Compile Include="src\WinTablet\PacketQueueTabletForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="src\WinTablet\TabletException.cs" />
     <Compile Include="src\WinTablet\TabletNotInstalledException.cs" />
     <Compile Include="src\WinTablet\TabletNotFoundException.cs" />
     <EmbeddedResource Include="MainForm.resources" />
     <EmbeddedResource Include="src\TestForm.resx">
       <DependentUpon>TestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="src\TestPacketQueueForm.resx">
+      <DependentUpon>TestPacketQueueForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TestForm.resources" />
   </ItemGroup>

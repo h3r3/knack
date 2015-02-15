@@ -109,8 +109,9 @@ namespace WinTablet
 			Console.WriteLine("Hardware capabilities [" + tablet.HardwareCapabilities + "]");
 			tabletSettings.MaxX = tablet.GetPropertyMetrics(PacketProperty.X).Maximum;
 			tabletSettings.MaxY = tablet.GetPropertyMetrics(PacketProperty.Y).Maximum;
-			tabletSettings.MaxNPressure = tablet.GetPropertyMetrics(PacketProperty.NormalPressure).Maximum;
-			
+            try {
+                tabletSettings.MaxNPressure = tablet.GetPropertyMetrics(PacketProperty.NormalPressure).Maximum;
+            } catch (ArgumentException) { }
 			rts = new RealTimeStylus(this.Handle, tablet);
 			rts.AsyncPluginCollection.Add(new TabletAsyncPlugin(this));
 			rts.Enabled = true;
